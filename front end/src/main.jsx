@@ -1,10 +1,8 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import {createRoot} from 'react-dom/client'
+import Layout from './layout'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const root = createRoot(document.querySelector("#root"))
+
+//render your react application
+root.render(<Layout/>)
