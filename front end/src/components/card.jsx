@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import '../style/styles.css'
 
 export const Card = () =>{
+
     return(
         <div><div className="product">
         <div className="img-container">
