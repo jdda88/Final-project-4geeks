@@ -1,10 +1,14 @@
 from flask_sqlalchemy import SQLAlchemy
+from uuid import uuid4
 
 db = SQLAlchemy()
 
+def get_uuid():
+    return uuid4().hex
+
 class User(db.Model):
-    __tablename__ = 'user'
-    id = db.Column(db.Integer, primary_key=True)
+    __tablename__= 'user'
+    id = db.Column(db.Integer, primary_key=True, unique=True, default=get_uuid)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
     username = db.Column(db.String(80), unique=True, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=True)
@@ -16,7 +20,7 @@ class User(db.Model):
     city = db.Column(db.String(30), unique=False, nullable=True)
     address = db.Column(db.String(30), unique=False, nullable=True)
     zipcode = db.Column(db.String(30), unique=False, nullable=True)
-    password = db.Column(db.String(120))
+    password = db.Column(db.String(120), nullable=False)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -61,15 +65,15 @@ class Products(db.Model):
     product_name = db.Column(db.String(30), unique=True, nullable=True)
     description = db.Column(db.String(250), unique=True, nullable=True)
     price = db.Column(db.Integer, unique=True, nullable=False)
-    user = db.Relationship("User", backref=db.backref('products', lazy=True))
+    user = db.relationship("User")
 
     def __repr__(self):
-        return '<Products %r>' % self.plan_name
+        return '<Products %r>' % self.product_name
 
     def serialize(self):
         return {
             "id": self.id,
-            "product_name": self.plan_name,
+            "product_name": self.product_name,
             "price": self.price,
             "description": self.description
         }
