@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import '../style/styles.css'
 
-export const Card = () =>{
+export const Card = ({name}) =>{
 
     return(
         <div><div className="product">
@@ -16,7 +16,7 @@ export const Card = () =>{
             add to bag
           </button>
         </div>
-        <h3>activewear</h3>
+        <h3>{name}</h3>
         <h4>$ price here</h4>
       </div></div>
     )
