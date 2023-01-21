@@ -14,7 +14,6 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=True)
     first_name = db.Column(db.String(120), unique=False, nullable=True)
     last_name = db.Column(db.String(120), unique=False, nullable=True)
-    isAdmin = db.Column(db.Boolean, default=False)
     country = db.Column(db.String(30), unique=False, nullable=True)
     state = db.Column(db.String(30), unique=False, nullable=True)
     city = db.Column(db.String(30), unique=False, nullable=True)
@@ -32,14 +31,12 @@ class User(db.Model):
             "email": self.email,
             "first_name": self.first_name,
             "last_name": self.last_name,
-            "isAdmin": self.isAdmin,
             "country": self.country,
             "state": self.state,
             "city": self.city,
             "address": self.address,
             "zipcode": self.zipcode,
-            "password": self.password,
-            "product_id": self.product_id
+            "password": self.password
         }
 
 
