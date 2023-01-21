@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/styles.css";
+import "../style/Footer.css";
 
 export const Footer = () => {
   return (
@@ -7,17 +7,14 @@ export const Footer = () => {
       <div className="navbar-center">
         <div className="cart-btn">
           <span className="nav-icon">
-            <i className="fas fa-cart-plus"></i>
           </span>
         </div>
         <div className="cart-btn">
           <span className="nav-icon">
-            <i className="fas fa-cart-plus"></i>
           </span>
         </div>
         <div className="cart-btn">
           <span className="nav-icon">
-            <i className="fas fa-cart-plus"></i>
           </span>
         </div>
       </div>
