@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./views/home.jsx";
-import { Activewear } from "./views/activewear";
+import { Activewear } from "./views/specificproduct";
 import { Products } from "./views/products.jsx";
-import { Electronics, Jewelery } from "./views/electronics.jsx";
+import { Electronics } from "./views/allproducts.jsx";
 
 function Layout() {
   return (
@@ -11,7 +11,7 @@ function Layout() {
       <BrowserRouter>
         <Routes>
           <Route path="/products/" element={<Products />} />
-          <Route path="/products/:productsId" element={<Electronics />} />
+          <Route path="/products/:productId" element={<Electronics />} />
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Activewear />} />
 
