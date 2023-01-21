@@ -5,29 +5,35 @@ import { get_category } from "../service/fakestore";
 import { useState, useEffect } from "react";
 import { Card } from "../components/card";
 
+export const Categories = () => {
+  const { category } = useParams();
+  const [categories, setCategories] = useState();
+  useEffect(() => {
+    async function set() {
+      let item = await get_category(category);
+      setCategories(item);
+    }
+    set();
+  }, []);
+  console.log(categories);
 
-
-
-export const Electronics = () => {
-    const { productId } = useParams();
-    const [product, setProduct] = useState(0)
-    useEffect(() => {
-        async function set() {
-            let item = await get_category(productId)
-            setProduct(item)
-
-        }
-        set()
-    }, [])
-    console.log(product)
-
-    return (
-        <div>
-        <Nav/>
-        {product.map((info, index) => {
+  return (
+    <div>
+      <Nav />
+      {categories?.map((info) => {
         console.log(info);
-        return <Card key={index} />;
+        return (
+          <div>
+            <Card
+              key={info.id}
+              name={info.title}
+              price={info.price}
+              image={info.image}
+              description={info.description}
+            />
+          </div>
+        );
       })}
-    </div>);
+    </div>
+  );
 };
-

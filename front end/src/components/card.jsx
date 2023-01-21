@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import '../style/styles.css'
 
-export const Card = ({name}) =>{
 
+
+
+export const Card = ({name="", image="", price="", description="" }) =>{
+
+
+    
     return(
         <div><div className="product">
         <div className="img-container">
           <img
-            src="./images/activewear cat.jpeg"
+            src={image}
             alt="product"
             className="product-img"
           />
@@ -17,7 +22,8 @@ export const Card = ({name}) =>{
           </button>
         </div>
         <h3>{name}</h3>
-        <h4>$ price here</h4>
+        <h4>$ {price}</h4>
+        <p className="">{description}</p>
       </div></div>
     )
 }
