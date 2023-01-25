@@ -6,9 +6,9 @@ import { Card } from "../components/card";
 import { get_categories } from "../service/fakestore";
 import { useEffect } from "react";
 import { useState } from "react";
+import { GoblalButton } from "../components/generalbutton";
 
 export const Home = () => {
-
   const [categorieName, setCategorieName] = useState();
 
   useEffect(() => {
@@ -26,7 +26,13 @@ export const Home = () => {
       <Jumbotron />
       {categorieName?.map((name, index) => {
         console.log(name);
-        return <Card key={index} name={name} />;
+        return (
+          <div>
+            <Card key={index} name={name} />
+
+            <GoblalButton name={name} path={`/products/${name}`} />
+          </div>
+        );
       })}
       <Footer />
     </>

@@ -1,27 +1,28 @@
 import React from "react";
+import { useParams } from "react-router";
 import { Nav } from "../components/navbar";
+import { get_category } from "../service/fakestore";
 import { useState, useEffect } from "react";
 import { Card } from "../components/card";
-import { get_products } from "../service/fakestore";
 
-
-export const Products = () => {
+export const Categories = () => {
     
-  const [products, setProducts] = useState();
+  const { category } = useParams();
+  const [categories, setCategories] = useState();
 
   useEffect(() => {
     async function set() {
-      let item = await get_products();
-      setProducts(item);
+      let item = await get_category(category);
+      setCategories(item);
     }
     set();
-
   }, []);
+  console.log(categories);
 
   return (
     <div>
       <Nav />
-      {products?.map((info) => {
+      {categories?.map((info) => {
         console.log(info);
         return (
           <div>
