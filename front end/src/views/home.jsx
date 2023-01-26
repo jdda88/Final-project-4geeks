@@ -3,33 +3,23 @@ import { Footer } from "../components/footer";
 import { Nav } from "../components/navbar";
 import { Jumbotron } from "../components/jumbotron";
 import { Card } from "../components/card";
-import { get_categories } from "../service/fakestore";
-import { useEffect } from "react";
-import { useState } from "react";
 import { GoblalButton } from "../components/generalbutton";
+import { useCategories } from "../hooks/useCategories";
 
 export const Home = () => {
-  const [categorieName, setCategorieName] = useState();
 
-  useEffect(() => {
-    async function set() {
-      let categories = await get_categories();
-      console.log(categories);
-      setCategorieName(categories);
-    }
-    set();
-  }, []);
-  
+  const data = useCategories()
+  //console.log(data)
+
   return (
     <>
       <Nav />
       <Jumbotron />
-      {categorieName?.map((name, index) => {
+      {data?.map((name, index) => {
         console.log(name);
         return (
-          <div>
-            <Card key={index} name={name} />
-
+          <div key={index}>
+            <Card name={name} />
             <GoblalButton name={name} path={`/products/${name}`} />
           </div>
         );

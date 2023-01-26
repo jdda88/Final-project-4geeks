@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./views/home.jsx";
 import {  Specificproduct } from "./views/specificproduct";
-import { Products } from "./views/products.jsx";
-import { Categories } from "./views/allproducts.jsx";
+import { Products } from "./views/allproducts.jsx";
+import { Categories } from "./views/products-by-category.jsx";
 
 function Layout() {
   return (
