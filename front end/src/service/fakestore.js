@@ -13,6 +13,7 @@ export const get_products = async () => {
 export const get_product = async (id) => {
     const res = await fetch(`${BaseUrl}/products/${id}`)
     let data = await res.json()
+
     return data
 }
 

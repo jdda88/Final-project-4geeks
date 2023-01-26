@@ -1,12 +1,15 @@
 import React from "react";
+import { useParams } from "react-router";
 import { Nav } from "../components/navbar";
 import { Card } from "../components/card";
-import { useProducts } from "../hooks/useProducts";
+import { useCategory } from "../hooks/useCategory";
 import { GoblalButton } from "../components/generalbutton";
 
-export const Products = () => {
-
-  const data = useProducts()
+export const Categories = () => {
+    
+  const { category } = useParams();
+  const data = useCategory(category)
+  //console.log(categories);
 
   return (
     <div>
