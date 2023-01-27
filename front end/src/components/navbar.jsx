@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "../style/styles.css";
 import { Sidebar } from "./sidebar";
+import { Togglable } from "./togglable";
 
 export const Nav = () => {
   const navigate = useNavigate();
@@ -10,12 +11,9 @@ export const Nav = () => {
   return (
     <nav className="navbar">
       <div className="navbar-center">
-        <span className="nav-icon" onClick={() => setVisible(!visible)}>
-            {/* Z index =1 on the CSS */}
-          {visible ? <Sidebar /> : <i className="fas fa-bars"></i>}
+        <span className="nav-icon">
+          <Togglable/>
         </span>
-        {visible}
-
         <div
           type="button"
           className="Backtohome"

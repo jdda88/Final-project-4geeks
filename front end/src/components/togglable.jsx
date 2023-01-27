@@ -1,18 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useToggle } from "../hooks/useToggle";
 
 export const Togglable = ({ children }) => {
-  const [visible, setvisible] = useState(false);
+
+  const {visible, toggle} = useToggle()
 
   return (
     <div>
-      <div style={showWhenVisible}>
-        {children}
-        <button onClick={() => setVisible(!visible)}>
-          {visible ? "Hide" : "Show"}
-        </button>
-        {visible && <div>My element</div>}
-      </div>
+        <span onClick={toggle}>
+        {visible ? children : <i className="fas fa-bars"></i>}
+        </span>
+        <div>
+          {visible}
+        </div>
     </div>
   );
 };

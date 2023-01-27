@@ -4,10 +4,11 @@ export const useToggle = (initialValue = false) => {
 
   const [visible, setVisible] = useState(initialValue);
 
-  const Show = () => setVisible(true);
+  const toggle = () => {
+    setVisible(!visible);
+  }
 
-  const Hide = () => setVisible(false)
-
-  return [visible, Show, Hide];
+  return [visible, toggle];
 };
 
+ 
