@@ -2,15 +2,13 @@ import React from "react";
 import "../style/styles.css";
 import { GoblalButton } from "./generalbutton";
 
-
 export const Jumbotron = () => {
-    
   return (
     <div>
       <div className="jumbotron">
         <div className="banner">
           <h1 className="banner-title">type of product</h1>
-          <GoblalButton name = {'Show All'} path = {'/products'}/>
+          <GoblalButton name={"Show All"} path={"/products"} />
         </div>
       </div>
 
