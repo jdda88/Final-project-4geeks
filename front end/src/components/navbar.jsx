@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
 import "../style/styles.css";
 import { Sidebar } from "./sidebar";
@@ -6,13 +6,14 @@ import { Togglable } from "./togglable";
 
 export const Nav = () => {
   const navigate = useNavigate();
-  const [visible, setVisible] = useState(false);
 
   return (
     <nav className="navbar">
       <div className="navbar-center">
         <span className="nav-icon">
-          <Togglable/>
+          <Togglable>
+              <Sidebar/>
+          </Togglable>
         </span>
         <div
           type="button"
