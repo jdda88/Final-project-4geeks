@@ -3,22 +3,12 @@ import "../style/Footer.css";
 
 export const Footer = () => {
   return (
-    <footer className="navbar">
-      <div className="navbar-center">
-        <div className="cart-btn">
-          <span className="nav-icon">
-          </span>
-        </div>
-        <div className="cart-btn">
-          <span className="nav-icon">
-          </span>
-        </div>
-        <div className="cart-btn">
-          <span className="nav-icon">
-          </span>
-        </div>
-      </div>
-    </footer>
+    <div class="card">
+    <div class="card-body">
+      Juan            Rekiya             Rodrigo      
+       https://github.com/jdda88/Group-2-MiamiPT42u
+    </div>
+  </div>
   );
 };
 {
