@@ -116,6 +116,11 @@ body{
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
+.navigate-buttons{
+  display: flex;
+  border-radius: 50%;
+}
+
 .products-center{
   width: 90vw;
   margin: 0 auto;
@@ -154,8 +159,8 @@ body{
 }
 .product-img{
   display: block;
-  width: 100%;
-  min-height: 12rem;
+  width: 100px;
+  min-height: 100px;
   transition: var(--mainTransition);
 }
 .img-container:hover .product-img{
