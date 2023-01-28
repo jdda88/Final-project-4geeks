@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "../style/styles.css";
 import { Sidebar } from "./sidebar";
@@ -10,11 +10,11 @@ export const Nav = () => {
   return (
     <nav className="navbar">
       <div className="navbar-center">
-        <span className="nav-icon">
-          <Togglable>
-              <Sidebar/>
+        <div className="nav-icon">
+        <Togglable name={<i className="fas fa-bars"></i>}>
+            {(isOpen) => <Sidebar isOpen={isOpen} />}
           </Togglable>
-        </span>
+        </div>
         <div
           type="button"
           className="Backtohome"

@@ -1,15 +1,17 @@
 import React from "react";
 import { useToggle } from "../hooks/useToggle";
 
-export const Togglable = ({ children }) => {
+export const Togglable = ({ children, name }) => {
+  const [visible, toggle] = useToggle();
 
-  const [visible, toggle] = useToggle()
+  let isOpen = visible ? "open" : "close";
 
   return (
-    <div>
-        <span onClick={toggle}>
-        {visible ? children : <i className="fas fa-bars"></i>}
-        </span>
+    <div className="toggle">
+      <div className="show" type="button" onClick={toggle}>
+        {name}
+        {visible ? children(isOpen) : children(isOpen)}
+      </div>
     </div>
   );
 };
