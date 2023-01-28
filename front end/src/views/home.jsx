@@ -7,8 +7,7 @@ import { GoblalButton } from "../components/generalbutton";
 import { useCategories } from "../hooks/useCategories";
 
 export const Home = () => {
-
-  const data = useCategories()
+  const data = useCategories();
   //console.log(data)
 
   return (
@@ -28,4 +27,3 @@ export const Home = () => {
     </>
   );
 };
-

@@ -6,9 +6,8 @@ import { useCategory } from "../hooks/useCategory";
 import { GoblalButton } from "../components/generalbutton";
 
 export const Categories = () => {
-    
   const { category } = useParams();
-  const data = useCategory(category)
+  const data = useCategory(category);
   //console.log(categories);
 
   return (
@@ -24,7 +23,7 @@ export const Categories = () => {
               image={info.image}
               description={info.description}
             />
-            <GoblalButton name={'See More'} path={`/products/id/${info.id}`} />
+            <GoblalButton name={"See More"} path={`/products/id/${info.id}`} />
           </div>
         );
       })}

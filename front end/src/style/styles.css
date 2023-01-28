@@ -88,6 +88,7 @@ body{
     text-transform: uppercase;
     letter-spacing: var(--mainSpacing);
     margin-bottom: 3rem;
+    color: white;
   }
   .banner-btn{
     padding: 1rem 3.4rem;
@@ -99,6 +100,33 @@ body{
     border: 1px solid var(--primaryColor);
     transition: var(--mainTransition);
     cursor: pointer;
+    /* added margin to center button */
+    /* margin-left: 42.5%; */
+  }
+  .description-product{
+    display: flex;
+    flex-direction: column;
+  }
+  .product-name{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    flex-direction: row-reverse;
+
+  }
+  .product-price{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    flex-direction: row-reverse;
+
+  }
+  .specifications{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    flex-direction: row-reverse;
+
   }
   .banner-btn:hover{
     background: transparent;
@@ -131,9 +159,11 @@ body{
   grid-row-gap: 2rem;
 }
 .img-container{
-  position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
+
 .bag-btn{
   position: absolute;
   top: 70%;
@@ -166,7 +196,7 @@ body{
 .img-container:hover .product-img{
   opacity: 0.5;
 }
-product h3{
+.product h3{
   text-transform: capitalize;
   font-size: 0.7rem;
   margin-top: 1rem;
@@ -179,6 +209,7 @@ product h3{
   color: var(--primaryColor);
   text-align: center;
 }
+
 /* end of categories */ 
 /* cart */
 .cart-overlay{
