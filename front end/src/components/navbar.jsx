@@ -12,7 +12,7 @@ export const Nav = () => {
     <nav className="navbar">
       <div className="navbar-center">
         <span className="nav-icon">
-          <Togglable/>
+          <Togglable />
         </span>
         <div
           type="button"

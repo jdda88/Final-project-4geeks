@@ -17,9 +17,11 @@ export const Card = ({
             add to bag
           </button>
         </div>
-        <h3>{name}</h3>
-        <h4>$ {price}</h4>
-        <p className="">{description}</p>
+        <div className="description-product">
+          <h3 className="product-name">{name}</h3>
+          <h4 className="product-price">$ {price}</h4>
+          <p className="specifications">{description}</p>
+        </div>
       </div>
     </div>
   );
