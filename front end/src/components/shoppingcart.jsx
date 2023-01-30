@@ -1,39 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
+import { useStateValue } from "../context/stateProvider";
+import "../style/shoppingcart.css";
 
-const ShoppingCart = () => {
-  const [items, setItems] = useState([]);
+export const ShoppingCart = ({ isOpen }) => {
+  const [{ bag }, dispatch] = useStateValue();
 
-  const addItem = (item) => {
-    setItems([...items, item]);
-  };
-
-  const removeItem = (item) => {
-    setItems(items.filter((i) => i !== item));
-  };
+  console.log(isOpen)
 
   return (
-    <div>
-      <h2>Shopping Cart</h2>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            {item}
-            <button onClick={() => removeItem(item)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          addItem(e.target.item.value);
-          e.target.item.value = "";
-        }}
-      >
-        <input type="text" name="item" placeholder="Add item to cart" />
-        <button type="submit">Add</button>
-      </form>
+    <div className="shoppingWrap">
+      <div className={`bag ${isOpen}`}>
+        <div className="shop">
+          <div className="bagHead">
+            <h2>Shopping Cart</h2>
+          </div>
+          <div className="bagBody">
+            <ul>
+              {bag?.map((item, index) => {
+                //console.log(item);
+                return (
+                  <div key={index}>
+                    <li>
+                      {item.name}
+                      <button>Remove</button>
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
-
-export default ShoppingCart;

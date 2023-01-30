@@ -7,6 +7,7 @@ import { GoblalButton } from "../components/generalbutton";
 import { useCategories } from "../hooks/useCategories";
 
 export const Home = () => {
+
   const data = useCategories();
   //console.log(data)
 
@@ -15,10 +16,10 @@ export const Home = () => {
       <Nav />
       <Jumbotron />
       {data?.map((name, index) => {
-        console.log(name);
+        //console.log(name);
         return (
           <div key={index}>
-            <Card name={name} />
+            <Card name={name} index={index}/>
             <GoblalButton name={name} path={`/products/${name}`} />
           </div>
         );

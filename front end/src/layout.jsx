@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./views/home.jsx";
-import {  Specificproduct } from "./views/specificproduct";
+import { Specificproduct } from "./views/specificproduct";
 import { Products } from "./views/allproducts.jsx";
 import { Categories } from "./views/products-by-category.jsx";
 
 function Layout() {
   return (
-    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/products/" element={<Products />} />
@@ -17,9 +16,7 @@ function Layout() {
           <Route path="*" element={<h1>Not found!</h1>} />
         </Routes>
       </BrowserRouter>
-    </div>
   );
 }
-
 
 export default Layout;

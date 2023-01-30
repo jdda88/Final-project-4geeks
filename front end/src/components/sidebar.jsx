@@ -8,6 +8,7 @@ export const Sidebar = ({ isOpen }) => {
   const data = useCategories();
 
   return (
+    <div className="sidebarWrapper">
     <div className={`sidebar ${isOpen}`}>
       <div className="menu">
         <div className="Head">
@@ -15,10 +16,10 @@ export const Sidebar = ({ isOpen }) => {
         </div>
         <div className="body">
           <ul>
-            <li><i class="fa-solid fa-house"></i> Home</li>
-            <li><i class="fa-solid fa-tag"></i> Catgories</li>
-            <li><i class="fa-solid fa-circle-info"></i> About</li>
-            <li> <i class="fa-solid fa-phone"></i> Contact</li>
+            <li><i className="fa-solid fa-house"></i> Home</li>
+            <li><i className="fa-solid fa-tag"></i> Catgories</li>
+            <li><i className="fa-solid fa-circle-info"></i> About</li>
+            <li> <i className="fa-solid fa-phone"></i> Contact</li>
           </ul>
         </div>
         <div className="Footer">
@@ -26,6 +27,7 @@ export const Sidebar = ({ isOpen }) => {
           <GoblalButton name={'Log In'} pad={'10px'}/>
         </div>
       </div>
+    </div>
     </div>
   );
 };

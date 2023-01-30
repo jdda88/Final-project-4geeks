@@ -4,11 +4,12 @@ import { Nav } from "../components/navbar";
 import { Card } from "../components/card";
 import { useCategory } from "../hooks/useCategory";
 import { GoblalButton } from "../components/generalbutton";
+import { useCart } from "../hooks/useCart";
 
 export const Categories = () => {
   const { category } = useParams();
   const data = useCategory(category);
-  //console.log(categories);
+  const [cart, addToCart, removeFromCart, getTotal] = useCart()
 
   return (
     <div>
@@ -22,6 +23,8 @@ export const Categories = () => {
               price={info.price}
               image={info.image}
               description={info.description}
+              adding={addToCart}
+              info={info}
             />
             <GoblalButton name={"See More"} path={`/products/id/${info.id}`} />
           </div>

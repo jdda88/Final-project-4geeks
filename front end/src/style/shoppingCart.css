@@ -1,0 +1,56 @@
+.shoppingWrap {
+    position: relative;
+ }
+ 
+.bag {
+    position: fixed;
+    top: 95%;
+    left: 100%;
+    width: 250px;
+    height: 100%;
+    background: #f8f8f8;
+    z-index: 30;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .bag.open {
+    transform: translateX(0);
+  }
+  
+  .bag.close {
+    transform: translateX(-250px);
+  }
+  
+  .shop {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .shop ul {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    text-align: justify;
+  }
+  
+  .shop li {
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .bagBody {
+    height: 100%;
+  }
+  
+  
+  .bagHead {
+    border-bottom: 1px solid #f09d51;
+  }
+  
+  .bagHead h2 {
+    margin-bottom: 5px;
+  }
+  
