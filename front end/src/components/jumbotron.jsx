@@ -1,6 +1,5 @@
 import React from "react";
 import "../style/styles.css";
-import "../style/sidebar.css";
 import { GoblalButton } from "./generalbutton";
 
 export const Jumbotron = () => {

@@ -6,13 +6,20 @@ import { Sidebar } from "./sidebar";
 import { Togglable } from "./togglable";
 
 export const Nav = () => {
-
   const navigate = useNavigate();
-  
+
+  const handleToggle = () => {
+    document.body.classList.toggle("darken-bg");
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      img.classList.toggle("darken-img");
+    });
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-center">
-        <div className="nav-icon">
+        <div className="nav-icon" onClick={handleToggle}>
           <Togglable name={<i className="fas fa-bars"></i>}>
             {(isOpen) => <Sidebar isOpen={isOpen} />}
           </Togglable>
@@ -29,7 +36,7 @@ export const Nav = () => {
         <div className="cart-btn">
           <span className="nav-icon">
             <Togglable name={<i className="fas fa-cart-plus"></i>}>
-               {(isOpen) => <ShoppingCart isOpen={isOpen} />}
+              {(isOpen) => <ShoppingCart isOpen={isOpen} />}
             </Togglable>
           </span>
           <div className="cart-items">0</div>

@@ -11,7 +11,6 @@ export const Products = () => {
 
   return (
     <div>
-      <Nav />
       {data?.map((info) => {
         //console.log(info);
         return (

@@ -5,11 +5,9 @@ import "../style/shoppingcart.css";
 export const ShoppingCart = ({ isOpen }) => {
   const [{ bag }, dispatch] = useStateValue();
 
-  console.log(isOpen)
-
   return (
     <div className="shoppingWrap">
-      <div className={`bag ${isOpen}`}>
+      <div className={`wrap ${isOpen}`}>
         <div className="shop">
           <div className="bagHead">
             <h2>Shopping Cart</h2>

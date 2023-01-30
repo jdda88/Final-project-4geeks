@@ -13,7 +13,6 @@ export const Categories = () => {
 
   return (
     <div>
-      <Nav />
       {data?.map((info) => {
         //console.log(info);
         return (

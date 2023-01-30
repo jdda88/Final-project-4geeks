@@ -42,6 +42,7 @@ body{
     font-size: 1.5rem;
     position: relative;
     z-index: 20;
+    cursor: pointer;
   }
   
   .logo{
@@ -50,6 +51,7 @@ body{
     margin-left: 10px;
     padding: 0;
     align-items: center;
+    cursor: pointer;
   }
 
   .cart-btn{
@@ -209,6 +211,9 @@ body{
   color: var(--primaryColor);
   text-align: center;
 }
+.product-price {
+  color: var(--primaryColor);
+}
 
 /* end of categories */ 
 /* cart */
@@ -250,7 +255,15 @@ body{
   }
 }
 
-
-
-
 /* end of cart */
+
+/*Darken Classes */
+
+.darken-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: brightness(50%);
+}
+
+.darken-img {
+  filter: brightness(50%);
+}

@@ -1,6 +1,4 @@
 import React from "react";
-import { Footer } from "../components/footer";
-import { Nav } from "../components/navbar";
 import { Jumbotron } from "../components/jumbotron";
 import { Card } from "../components/card";
 import { GoblalButton } from "../components/generalbutton";
@@ -13,7 +11,6 @@ export const Home = () => {
 
   return (
     <>
-      <Nav />
       <Jumbotron />
       {data?.map((name, index) => {
         //console.log(name);
@@ -24,7 +21,6 @@ export const Home = () => {
           </div>
         );
       })}
-      <Footer />
     </>
   );
 };

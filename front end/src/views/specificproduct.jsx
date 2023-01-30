@@ -13,7 +13,6 @@ export const Specificproduct = () => {
 
   return (
     <div>
-      <Nav />
       <Card
         name={data?.title}
         price={data?.price}
