@@ -1,7 +1,14 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 
-const ShoppingCart = () => {
+export const ShoppingCart = ({isOpen}) => {
   const [items, setItems] = useState([]);
+  console.log(items)
+  // useEffect(()=>{
+  //   async function settingcart(){
+  //     let newcart = 
+    // }
+  // })
 
   const addItem = (item) => {
     setItems([...items, item]);
@@ -18,22 +25,13 @@ const ShoppingCart = () => {
         {items.map((item, index) => (
           <li key={index}>
             {item}
+            <button onClick={() => addItem(item)}>Add</button>
+
             <button onClick={() => removeItem(item)}>Remove</button>
           </li>
         ))}
       </ul>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          addItem(e.target.item.value);
-          e.target.item.value = "";
-        }}
-      >
-        <input type="text" name="item" placeholder="Add item to cart" />
-        <button type="submit">Add</button>
-      </form>
     </div>
   );
 };
 
-export default ShoppingCart;

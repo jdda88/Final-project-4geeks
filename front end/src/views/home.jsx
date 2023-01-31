@@ -5,6 +5,7 @@ import { Jumbotron } from "../components/jumbotron";
 import { Card } from "../components/card";
 import { GoblalButton } from "../components/generalbutton";
 import { useCategories } from "../hooks/useCategories";
+import "../style/home-card.css";
 
 export const Home = () => {
   const data = useCategories();
@@ -14,15 +15,17 @@ export const Home = () => {
     <>
       <Nav />
       <Jumbotron />
-      {data?.map((name, index) => {
-        console.log(name);
-        return (
-          <div key={index}>
-            <Card name={name} />
-            <GoblalButton name={name} path={`/products/${name}`} />
-          </div>
-        );
-      })}
+      <div className="wrap-card">
+        {data?.map((name, index) => {
+          console.log(name);
+          return (
+            <div className="example-card" key={index}>
+              <Card name={name} />
+              <GoblalButton name={name} path={`/products/${name}`} />
+            </div>
+          );
+        })}
+      </div>
       <Footer />
     </>
   );

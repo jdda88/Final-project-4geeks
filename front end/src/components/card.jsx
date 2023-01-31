@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "../style/styles.css";
 
 export const Card = ({
@@ -7,12 +7,23 @@ export const Card = ({
   price = "",
   description = "",
 }) => {
+  const [itemname, setitemname] = useState([]);
+  const addtocart = (item) =>{
+    setitemname([...itemname, item])
+  }
+  console.log(itemname);
   return (
     <div className="products-center">
       <div className="categories">
         <div className="img-container">
           <img src={image} alt="product" className="product-img" />
-          <button className="bag-btn" data-id="1">
+          <button
+            className="bag-btn"
+            data-id="1"
+            onClick={() => {
+              addtocart()
+            }}
+          >
             <i className="fas fa-shopping-cart"></i>
             add to bag
           </button>
