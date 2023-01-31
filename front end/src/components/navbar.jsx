@@ -19,7 +19,11 @@ export const Nav = () => {
   return (
     <nav className="navbar">
       <div className="navbar-center">
+<<<<<<< HEAD
         <div className="nav-icon" onClick={handleToggle}>
+=======
+        <div className="nav-icon">
+>>>>>>> dcb8a4ebefb6e6336db7656b7a854b7fecdd8909
           <Togglable name={<i className="fas fa-bars"></i>}>
             {(isOpen) => <Sidebar isOpen={isOpen} />}
           </Togglable>

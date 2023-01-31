@@ -1,0 +1,12 @@
+.example-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+
+}
+*{
+    border: 1px solid red;
+
+}
