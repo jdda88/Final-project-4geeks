@@ -20,7 +20,6 @@ export const Card = ({
     <div className="products-center">
       <div className="categories">
         <div className="img-container">
-<<<<<<< HEAD
           {image === "" ? (
             <div className={`img-${index}`}></div>
           ) : (
@@ -36,19 +35,7 @@ export const Card = ({
               </button>
             </div>
           )}
-=======
-          <img src={image} alt="product" className="product-img" />
-          <button
-            className="bag-btn"
-            data-id="1"
-            onClick={() => {
-              addtocart()
-            }}
-          >
-            <i className="fas fa-shopping-cart"></i>
-            add to bag
-          </button>
->>>>>>> dcb8a4ebefb6e6336db7656b7a854b7fecdd8909
+
         </div>
         <div className="description-product">
           <h3 className="product-name">{name}</h3>

@@ -29,9 +29,9 @@ export const Login = () => {
           id="pasword"
           name="pasword"
         />
-        <GoblalButton name = {'Log in'}/>
+        <GoblalButton name={"Log in"} />
       </form>
-      <button>Don't have an account? registere here.</button>
+        <GoblalButton name={"Create an account"} path="/register"/>
     </>
   );
 };

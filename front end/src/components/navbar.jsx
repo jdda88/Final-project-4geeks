@@ -4,26 +4,16 @@ import "../style/styles.css";
 import { ShoppingCart } from "./shoppingcart";
 import { Sidebar } from "./sidebar";
 import { Togglable } from "./togglable";
+import { handleToggle } from "../utils/handletoggle";
 
 export const Nav = () => {
   const navigate = useNavigate();
 
-  const handleToggle = () => {
-    document.body.classList.toggle("darken-bg");
-    const images = document.querySelectorAll("img");
-    images.forEach((img) => {
-      img.classList.toggle("darken-img");
-    });
-  };
-
+  
   return (
     <nav className="navbar">
       <div className="navbar-center">
-<<<<<<< HEAD
         <div className="nav-icon" onClick={handleToggle}>
-=======
-        <div className="nav-icon">
->>>>>>> dcb8a4ebefb6e6336db7656b7a854b7fecdd8909
           <Togglable name={<i className="fas fa-bars"></i>}>
             {(isOpen) => <Sidebar isOpen={isOpen} />}
           </Togglable>
@@ -38,11 +28,11 @@ export const Nav = () => {
           <h1 className="logo">E-commerce site</h1>
         </div>
         <div className="cart-btn">
-          <span className="nav-icon">
+          <div className="nav-icon" onClick={handleToggle}>
             <Togglable name={<i className="fas fa-cart-plus"></i>}>
-              {(isOpen) => <ShoppingCart isOpen={isOpen} />}
+              {(isShopOpen) => <ShoppingCart isOpen={isShopOpen} />}
             </Togglable>
-          </span>
+          </div>
           <div className="cart-items">0</div>
         </div>
       </div>
