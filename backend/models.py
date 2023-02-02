@@ -9,7 +9,7 @@ def get_uuid():
 class User(db.Model):
     __tablename__= 'user'
     id = db.Column(db.Integer, primary_key=True, unique=True, default=get_uuid)
-    product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     username = db.Column(db.String(80), unique=True, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=True)
     first_name = db.Column(db.String(120), unique=False, nullable=True)
@@ -18,7 +18,7 @@ class User(db.Model):
     state = db.Column(db.String(30), unique=False, nullable=True)
     city = db.Column(db.String(30), unique=False, nullable=True)
     address = db.Column(db.String(30), unique=False, nullable=True)
-    zipcode = db.Column(db.String(30), unique=False, nullable=True)
+    zipcode = db.Column(db.Integer, unique=False, nullable=True)
     password = db.Column(db.String(120), nullable=False)
 
     def __repr__(self):

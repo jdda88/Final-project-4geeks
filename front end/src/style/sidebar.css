@@ -14,11 +14,11 @@
   filter: none !important;
 }
 
-.sidebar.open {
+.sidebar.true {
   transform: translateX(0);
 }
 
-.sidebar.close {
+.sidebar.false {
   transform: translateX(-250px);
 }
 
@@ -34,12 +34,12 @@
   list-style: none;
   margin-top: 10px;
   padding: 0;
-  text-align: justify;
 }
 
 .menu li {
   margin-bottom: 10px;
   border-radius: 5px;
+  
 }
 
 .menu li:hover{
@@ -48,6 +48,7 @@
 
 .body {
   height: 100%;
+  display: flex;
 }
 
 .Footer {

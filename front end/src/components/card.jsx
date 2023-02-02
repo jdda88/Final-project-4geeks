@@ -15,10 +15,10 @@ export const Card = ({
   const addtocart = (item) => {
     setitemname([...itemname, item]);
   };
-  console.log(itemname);
+
   return (
     <div className="products-center">
-      <div className="categories">n
+      <div className="categories">
         <div className="img-container">
           {image === "" ? (
             <div className={`img-${index}`}></div>

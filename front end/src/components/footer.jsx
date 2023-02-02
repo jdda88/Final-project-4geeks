@@ -13,7 +13,7 @@ export const Footer = () => {
         </div>
         <div className="cart-btn">
           <a href="https://github.com/jdda88?tab=repositories" target='_blank' style={{textDecoration:'none', color:'black'}}>
-            <i className="fa fa-github" style={{fontsize:'36px'}}></i> Juan
+            <i className="fa fa-github" style={{fontsize:'36px'}}></i> Juan Diaz
           </a>
         </div>
         <div className="cart-btn">

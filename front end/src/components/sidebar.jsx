@@ -2,6 +2,7 @@ import React from "react";
 import { useCategories } from "../hooks/useCategories";
 import { GoblalButton } from "./generalbutton";
 import { useNavigate } from "react-router";
+import { Login } from "./login";
 import "../style/sidebar.css";
 
 export const Sidebar = ({ isOpen }) => {
@@ -25,8 +26,8 @@ export const Sidebar = ({ isOpen }) => {
           </ul>
         </div>
         <div className="Footer">
-          <GoblalButton name={'Sign Up'} pad={'10px'}/>
-          <GoblalButton name={'Log In'} pad={'10px'}/>
+          <GoblalButton name={'Sign Up'} path = {"/register"} pad={'10px'}/>
+          <Login />
         </div>
       </div>
     </div>

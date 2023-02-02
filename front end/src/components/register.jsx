@@ -33,7 +33,7 @@ export const Register = () => {
           id="pasword"
           name="pasword"
         />
-        <GoblalButton name = {"Register"}/>
+        <GoblalButton name={"Register"} />
       </form>
     </>
   );

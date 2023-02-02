@@ -7,6 +7,7 @@ import BarLoader from "react-spinners/BarLoader";
 import '../style/spinner.css'
 
 export const Home = () => {
+
   const { data, loading } = useCategories();
 
   return (
@@ -20,7 +21,7 @@ export const Home = () => {
         data?.map((name, index) => {
           //console.log(name);
           return (
-            <div key={index}>
+            <div className="card-button" key={index}>
               <Card name={name} index={index} />
               <GoblalButton name={name} path={`/products/${name}`} />
             </div>

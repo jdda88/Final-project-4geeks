@@ -260,9 +260,9 @@ body{
 
 .darken-bg {
   background-color: rgba(0, 0, 0, 0.5);
-  filter: brightness(50%);
 }
 
 .darken-img {
   filter: brightness(50%);
+  
 }
