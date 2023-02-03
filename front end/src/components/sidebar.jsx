@@ -26,7 +26,7 @@ export const Sidebar = ({ isOpen }) => {
           </ul>
         </div>
         <div className="Footer">
-          <GoblalButton name={'Sign Up'} path = {"/register"} pad={'10px'}/>
+          <GoblalButton name={'Sign Up'}  path = {"/register"} pad={'10px'}/>
           <Login />
         </div>
       </div>

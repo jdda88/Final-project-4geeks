@@ -1,0 +1,94 @@
+@import url("./root.css");
+
+.categories{
+    padding: 4rem 0;
+  }
+.home-body{
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+
+  .section-title h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+  }
+  .navigate-buttons{
+    display: flex;
+    border-radius: 50%;
+  }
+  
+  /* .products-center{
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+  } */
+  .img-container{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bag-btn{
+    position: relative;
+    top: 70%;
+    right: 0;
+    background: var(--primaryColor);
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: var(--mainSpacing);
+    font-weight: bold;
+    transition: var(--mainTransition);
+    transform: translateX(150%);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+  } 
+  /* .bag-btn:hover{
+    color: var(--mainWhite);
+  } */
+  .fa-shoping-cart{
+    margin-right: 0.5rem;
+  }
+  .img-container:hover  .bag-btn{
+    transform: translateX(0);
+  }
+  .product-img{
+    display: block;
+    /* border: 1px solid red; */
+    width: 200px;
+    height: 200px;
+    transition: var(--mainTransition);
+    object-fit: contain;
+  }
+  .img-container:hover  .product-img{
+    opacity: 0.5;
+  }
+  .product h3{
+    text-transform: capitalize;
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    letter-spacing: var(--mainSpacing);
+    text-align: center;
+  }
+  .product h4{
+    margin-top: 0.7rem;
+    letter-spacing: var(--mainSpacing);
+    color: var(--primaryColor);
+    text-align: center;
+  }
+  .product-price {
+    color: var(--primaryColor);
+  }

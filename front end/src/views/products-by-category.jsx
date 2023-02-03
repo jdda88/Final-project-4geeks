@@ -19,7 +19,8 @@ export const Categories = () => {
           <BarLoader color="#f09d51" />
         </div>
       ) : (
-        data?.map((info) => {
+        <div className="home-body">
+          { data?.map((info) => {
           //console.log(info);
           return (
             <div key={info.id}>
@@ -27,7 +28,6 @@ export const Categories = () => {
                 name={info.title}
                 price={info.price}
                 image={info.image}
-                description={info.description}
                 adding={addToCart}
                 info={info}
               />
@@ -37,7 +37,8 @@ export const Categories = () => {
               />
             </div>
           );
-        })
+        })}</div>
+       
       )}
     </div>
   );
