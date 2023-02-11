@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GoblalButton } from "./generalbutton";
 import { handleSubmit } from "../utils/handdlesubmit";
+import { useEffect } from "react";
 
 export const Register = () => {
   const [email, setEmail] = useState("");
@@ -13,9 +14,17 @@ export const Register = () => {
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
 
-  const register = async()=>{
-    const res = await fetch ("http://localhost:5000/register",{method : "POST"})
-  }
+
+  useEffect(()=>{
+    const register = async()=>{
+      const res = await fetch ("http://localhost:5000/register",{method : "POST"})
+      let data = await res.json()
+      return console.log(data, "this")
+    }
+    register()    
+
+  },[])
+  
   
   console.log(first_name, last_name,email,pass,address,city,zip,state,country)
   return (
@@ -104,7 +113,7 @@ export const Register = () => {
         />
         
 
-        <GoblalButton type="submit" name={"Register"} />
+        <GoblalButton onclick={()=>register()} type="submit" name={"Register"} />
       </form>
     </>
   );
