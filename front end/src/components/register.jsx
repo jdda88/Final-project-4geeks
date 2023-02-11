@@ -14,7 +14,7 @@ export const Register = () => {
   const [country, setCountry] = useState("");
 
   const register = async()=>{
-    const res = await fetch ("http://localhost:5000/register")
+    const res = await fetch ("http://localhost:5000/register",{method : "POST"})
   }
   
   console.log(first_name, last_name,email,pass,address,city,zip,state,country)
