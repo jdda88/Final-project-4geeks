@@ -6,11 +6,8 @@ import "../style/styles.css";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
   const [modal, setModal] = useState(false);
-
   const toggle = () => setModal(!modal);
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };

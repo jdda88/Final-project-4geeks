@@ -5,12 +5,13 @@ import { GoblalButton } from "../components/generalbutton";
 import { useCategories } from "../hooks/useCategories";
 import BarLoader from "react-spinners/BarLoader";
 import "../style/spinner.css";
+import "../style/homepage.css"
 
 export const Home = () => {
   const { data, loading } = useCategories();
 
   return (
-    <div>
+    <div className="home-page">
       <Jumbotron />
       {loading ? (
         <div className="spinner">
@@ -21,7 +22,7 @@ export const Home = () => {
           {data?.map((name, index) => {
             //console.log(name);
             return (
-              <div className="card-button" key={index}>
+              <div className="card-product-home" key={index}>
                 <Card name={name} index={index} />
                 <GoblalButton name={name} path={`/products/${name}`} />
               </div>

@@ -6,6 +6,7 @@
   height: 100px;
   position: fixed;
   z-index: 60;
+  transition: var(--mainTransition);
 }
 
 .shoppingmenu {

@@ -17,27 +17,32 @@ export const Products = () => {
           <BarLoader color="#f09d51" />
         </div>
       ) : (
-        data?.map((info) => {
-          //console.log(info);
-          return (
-            <div key={info.id}>
-              <Card
-                name={info.title}
-                price={info.price}
-                image={info.image}
-                adding={addToCart}
-                info={info}
-              />
-              <div className="all-product-btn">
-                <GoblalButton
-                  className="productsbutton"
-                  name={"See More"}
-                  path={`/products/id/${info.id}`}
-                />
+        <div className="home-body">
+          {data?.map((info) => {
+            //console.log(info);
+            return (
+              <div className="card-product" key={info.id}>
+                <div className="cardproductbody">
+                  <Card
+                    name={info.title}
+                    price={info.price}
+                    image={info.image}
+                    adding={addToCart}
+                    info={info}
+                  />
+                </div>
+
+                <div className="all-product-btn">
+                  <GoblalButton
+                    className="productsbutton"
+                    name={"See More"}
+                    path={`/products/id/${info.id}`}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })
+            );
+          })}
+        </div>
       )}
     </div>
   );

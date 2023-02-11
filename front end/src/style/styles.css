@@ -166,7 +166,12 @@ body{
 }
 
 /* end of cart */
-
+.all-product-btn{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+}
 /*Darken Classes */
 
 .darken-bg {
