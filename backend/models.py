@@ -8,8 +8,7 @@ def get_uuid():
 
 class User(db.Model):
     __tablename__= 'user'
-    id = db.Column(db.Integer, primary_key=True, unique=True, default=get_uuid)
-    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
+    id = db.Column(db.String(120), primary_key=True, unique=True, default=get_uuid)
     username = db.Column(db.String(80), unique=True, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=True)
     first_name = db.Column(db.String(120), unique=False, nullable=True)
@@ -18,8 +17,8 @@ class User(db.Model):
     state = db.Column(db.String(30), unique=False, nullable=True)
     city = db.Column(db.String(30), unique=False, nullable=True)
     address = db.Column(db.String(30), unique=False, nullable=True)
-    zipcode = db.Column(db.Integer, unique=False, nullable=True)
-    password = db.Column(db.String(120), nullable=False)
+    zipcode = db.Column(db.String(30), unique=False, nullable=True)
+    password = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -36,13 +35,13 @@ class User(db.Model):
             "city": self.city,
             "address": self.address,
             "zipcode": self.zipcode,
-            "password": self.password
+            "password": self.password,
         }
 
 
 class Orders(db.Model):
     __tablename__ = 'orders'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(120), primary_key=True)
     purchase_date = db.Column(db.Integer, nullable=False)
     confirmation_number = db.Column(db.Integer, nullable=False)
 
@@ -58,11 +57,10 @@ class Orders(db.Model):
 
 class Products(db.Model):
     __tablename__= 'products'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(120), primary_key=True)
     product_name = db.Column(db.String(30), unique=True, nullable=True)
     description = db.Column(db.String(250), unique=True, nullable=True)
     price = db.Column(db.Integer, unique=True, nullable=False)
-    user = db.relationship("User")
 
     def __repr__(self):
         return '<Products %r>' % self.product_name
@@ -72,5 +70,5 @@ class Products(db.Model):
             "id": self.id,
             "product_name": self.product_name,
             "price": self.price,
-            "description": self.description
+            "description": self.description,
         }

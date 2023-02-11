@@ -29,13 +29,13 @@ def get_current_user():
         "id": user.id,
         "email": user.email,
         "username": user.username,
-        "first_name": user.firts_name,
+        "first_name": user.first_name,
         "last_name": user.last_name,
         "country": user.country,
         "state": user.state,
         "city": user.city,
-        "address": user.adress,
-        "zipcode": user.ziocode
+        "address": user.address,
+        "zipcode": user.zipcode,
     })
 
 @app.route("/register", methods=["POST"])
@@ -72,8 +72,8 @@ def register_user():
         "country": new_user.country,
         "state": new_user.state,
         "city": new_user.city,
-        "address": new_user.adress,
-        "zipcode": new_user.ziocode
+        "address": new_user.address,
+        "zipcode": new_user.zipcode,
 
     })
 
@@ -95,7 +95,7 @@ def login_user():
 
     return jsonify({
         "id": user.id,
-        "email": user.email
+        "email": user.email,
     })
 
 
