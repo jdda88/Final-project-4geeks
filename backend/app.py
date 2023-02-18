@@ -7,7 +7,8 @@ from models import db, User
 
 app = Flask(__name__)
 app.config.from_object(ApplicationConfig)
-
+app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 bcrypt = Bcrypt(app)
 server_session = Session(app)
 db.init_app(app)

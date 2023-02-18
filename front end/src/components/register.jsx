@@ -32,7 +32,7 @@ export const Register = () => {
         password: pass,
         address,
         city,
-        zip,
+        zipcode: zip,
         state,
         country
     }
