@@ -10,9 +10,11 @@
   width: 250px;
   height: 100%;
   background: #f8f8f8 !important;
-  z-index: 20;
+  z-index: 30; /* changed from 20 to 30 */
   transition: transform 0.3s ease-in-out;
   filter: none !important;
+  float: center;
+  clear: right;
 }
 
 .sidebar.true {
@@ -52,7 +54,7 @@
   display: flex;
 }
 
-.Footer {
+.signinbuttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

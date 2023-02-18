@@ -11,6 +11,7 @@ export const Categories = () => {
   const { category } = useParams();
   const { data, loading } = useCategory(category);
   const [cart, addToCart, removeFromCart, getTotal] = useCart();
+  const MAX_PRODUCT_NAME_LENGTH = 20;
 
   return (
     <div>
@@ -20,25 +21,32 @@ export const Categories = () => {
         </div>
       ) : (
         <div className="home-body">
-          { data?.map((info) => {
-          //console.log(info);
-          return (
-            <div key={info.id}>
-              <Card
-                name={info.title}
-                price={info.price}
-                image={info.image}
-                adding={addToCart}
-                info={info}
-              />
-              <GoblalButton
-                name={"See More"}
-                path={`/products/id/${info.id}`}
-              />
-            </div>
-          );
-        })}</div>
-       
+          {data?.map((info) => {
+            let truncatedName = info.title.slice(0, MAX_PRODUCT_NAME_LENGTH);
+            if (truncatedName !== info.title) truncatedName += "...";
+            return (
+              <div className="card-product" key={info.id}>
+                <div className="cardproductbody">
+                  <div className="categories">
+                    <Card
+                      name={truncatedName}
+                      price={info.price}
+                      image={info.image}
+                      adding={addToCart}
+                      info={info}
+                    />
+                  </div>
+                </div>
+                <div className="banner-btn">
+                  <GoblalButton
+                    name={"See More"}
+                    path={`/products/id/${info.id}`}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       )}
     </div>
   );

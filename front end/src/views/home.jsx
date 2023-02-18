@@ -3,9 +3,10 @@ import { Jumbotron } from "../components/jumbotron";
 import { Card } from "../components/card";
 import { GoblalButton } from "../components/generalbutton";
 import { useCategories } from "../hooks/useCategories";
+import {Footer} from "../components/footer";
 import BarLoader from "react-spinners/BarLoader";
 import "../style/spinner.css";
-import "../style/homepage.css"
+import "../style/homepage.css";
 
 export const Home = () => {
   const { data, loading } = useCategories();
@@ -30,6 +31,7 @@ export const Home = () => {
           })}
         </div>
       )}
+      <Footer />
     </div>
   );
 };

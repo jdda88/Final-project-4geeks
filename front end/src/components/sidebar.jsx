@@ -25,7 +25,7 @@ export const Sidebar = ({ isOpen }) => {
             <li> <i className="fa-solid fa-phone"></i> Contact</li>
           </ul>
         </div>
-        <div className="Footer">
+        <div className="signinbuttons">
           <GoblalButton name={'Sign Up'}  path = {"/register"} pad={'10px'}/>
           <Login />
         </div>

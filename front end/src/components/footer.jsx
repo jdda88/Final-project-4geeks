@@ -1,9 +1,9 @@
 import React from "react";
-import "../style/styles.css";
+import "../style/footer.css";
 
 export const Footer = () => {
   return (
-    <footer className="navbar">
+    <footer className="footer">
       <div className="navbar-center">
         <div className="cart-btn">
           <a href="https://github.com/UrbanWoman?tab=repositories" target='_blank' style={{textDecoration:'none', color:'black'}}>

@@ -6,10 +6,12 @@ import { useCart } from "../hooks/useCart";
 import BarLoader from "react-spinners/BarLoader";
 import "../style/spinner.css";
 
+
+
 export const Products = () => {
   const { data, loading } = useProducts();
   const [cart, addToCart, removeFromCart, getTotal] = useCart();
-
+  const MAX_PRODUCT_NAME_LENGTH = 20;
   return (
     <div>
       {loading ? (
@@ -19,12 +21,13 @@ export const Products = () => {
       ) : (
         <div className="home-body">
           {data?.map((info) => {
-            //console.log(info);
+            let truncatedName = info.title.slice(0, MAX_PRODUCT_NAME_LENGTH);
+            if (truncatedName !== info.title) truncatedName += "...";
             return (
               <div className="card-product" key={info.id}>
                 <div className="cardproductbody">
                   <Card
-                    name={info.title}
+                    name={truncatedName}
                     price={info.price}
                     image={info.image}
                     adding={addToCart}
@@ -47,3 +50,4 @@ export const Products = () => {
     </div>
   );
 };
+

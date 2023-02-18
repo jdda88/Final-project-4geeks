@@ -5,8 +5,7 @@ import { Specificproduct } from "./views/specificproduct";
 import { Products } from "./views/allproducts.jsx";
 import { Categories } from "./views/products-by-category.jsx";
 import { Nav } from "./components/navbar.jsx";
-import { Footer } from './components/footer.jsx'
-import '../src/style/styles.css'
+import "../src/style/styles.css";
 import { Register } from "./components/register.jsx";
 import { Login } from "./components/login.jsx";
 
@@ -22,10 +21,8 @@ function Layout() {
           <Route exact path="/products/id/:id" element={<Specificproduct />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
-
           <Route path="*" element={<h1>Not found!</h1>} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
