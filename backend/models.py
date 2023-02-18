@@ -9,15 +9,15 @@ def get_uuid():
 class User(db.Model):
     __tablename__= 'user'
     id = db.Column(db.String(120), primary_key=True, unique=True, default=get_uuid)
-    username = db.Column(db.String(80), unique=True, nullable=True)
-    email = db.Column(db.String(120), unique=True, nullable=True)
-    first_name = db.Column(db.String(120), unique=False, nullable=True)
-    last_name = db.Column(db.String(120), unique=False, nullable=True)
-    country = db.Column(db.String(30), unique=False, nullable=True)
-    state = db.Column(db.String(30), unique=False, nullable=True)
-    city = db.Column(db.String(30), unique=False, nullable=True)
-    address = db.Column(db.String(30), unique=False, nullable=True)
-    zipcode = db.Column(db.String(30), unique=False, nullable=True)
+    username = db.Column(db.String(80), unique=True)
+    email = db.Column(db.String(120), unique=True)
+    first_name = db.Column(db.String(120), unique=False)
+    last_name = db.Column(db.String(120), unique=False)
+    country = db.Column(db.String(30), unique=False)
+    state = db.Column(db.String(30), unique=False)
+    city = db.Column(db.String(30), unique=False)
+    address = db.Column(db.String(30), unique=False)
+    zipcode = db.Column(db.String(30), unique=False)
     password = db.Column(db.Text, nullable=False)
 
     def __repr__(self):

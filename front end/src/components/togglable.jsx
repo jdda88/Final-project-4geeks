@@ -4,7 +4,7 @@ import { useToggle } from "../hooks/useToggle";
 
 export const Togglable = ({ children, name }) => {
   const [visible, togglable] = useToggle();
-  console.log(visible);
+  //console.log(visible);
   let hidden = { display: visible ? "none" : "" };
   let show = { display: visible ? "" : "none" };
   return (

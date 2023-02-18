@@ -32,4 +32,3 @@ export const get_category = async (category) => {
     let data = await res.json()
     return data
 }
-
