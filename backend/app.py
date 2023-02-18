@@ -7,8 +7,7 @@ from models import db, User
 
 app = Flask(__name__)
 app.config.from_object(ApplicationConfig)
-app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, supports_credentials=True)
 bcrypt = Bcrypt(app)
 server_session = Session(app)
 db.init_app(app)
@@ -39,6 +38,7 @@ def get_current_user():
     })
 
 @app.route("/register", methods=["POST"])
+@cross_origin(supports_credentials=True)
 def register_user():
     username = request.json["username"]
     email = request.json["email"]
