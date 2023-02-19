@@ -15,7 +15,6 @@ export const Togglable = ({ children, name }) => {
         </div>
       </div>
       <div className="prueba" style={show}>
-        
         <div type="button" onClick={togglable}>{children}cancel</div>
       </div>
     </div>

@@ -1,0 +1,8 @@
+:root{
+    --primaryColor: #f09d51;
+    --mainWhite: #fff;
+    --mainGray: #ececec;
+    --maiBlack: #222;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all 0.3s linear;
+}

@@ -79,6 +79,7 @@ def register_user():
 
 
 @app.route("/login", methods=["POST"])
+@cross_origin(supports_credentials=True)
 def login_user():
     email = request.json["email"]
     password = request.json["password"]

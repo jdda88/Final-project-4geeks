@@ -7,8 +7,10 @@ import BarLoader from "react-spinners/BarLoader";
 import "../style/spinner.css";
 
 export const Products = () => {
+
   const { data, loading } = useProducts();
-  const [cart, addToCart, removeFromCart, getTotal] = useCart();
+  const [ cart, addToCart ] = useCart();
+  const MAX_PRODUCT_NAME_LENGTH = 20;
 
   return (
     <div>
@@ -17,28 +19,35 @@ export const Products = () => {
           <BarLoader color="#f09d51" />
         </div>
       ) : (
-        data?.map((info) => {
-          //console.log(info);
-          return (
-            <div key={info.id}>
-              <Card
-                name={info.title}
-                price={info.price}
-                image={info.image}
-                adding={addToCart}
-                info={info}
-              />
-              <div className="all-product-btn">
-                <GoblalButton
-                  className="productsbutton"
-                  name={"See More"}
-                  path={`/products/id/${info.id}`}
-                />
+        <div className="home-body">
+          {data?.map((info) => {
+            let truncatedName = info.title.slice(0, MAX_PRODUCT_NAME_LENGTH);
+            if (truncatedName !== info.title) truncatedName += "...";
+            return (
+              <div className="card-product" key={info.id}>
+                <div className="cardproductbody">
+                  <Card
+                    name={truncatedName}
+                    price={info.price}
+                    image={info.image}
+                    adding={addToCart}
+                    info={info}
+                  />
+                </div>
+
+                <div className="all-product-btn">
+                  <GoblalButton
+                    className="productsbutton"
+                    name={"See More"}
+                    path={`/products/id/${info.id}`}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })
+            );
+          })}
+        </div>
       )}
     </div>
   );
 };
+

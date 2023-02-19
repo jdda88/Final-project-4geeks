@@ -1,8 +1,10 @@
 import React from "react";
 import { useStateValue } from "../context/stateProvider";
+import { useCart } from "../hooks/useCart";
 import "../style/shoppingcart.css";
 
 export const ShoppingCart = ({ isOpen }) => {
+  const [cart, removeFromCart] = useCart()
   const [{ bag }, dispatch] = useStateValue();
 
   return (
@@ -18,7 +20,7 @@ export const ShoppingCart = ({ isOpen }) => {
                 <div key={index}>
                   <li>
                     {item.name}
-                    <button>Remove</button>
+                    <button onClick={() => removeFromCart}>Remove</button>
                   </li>
                 </div>
               );

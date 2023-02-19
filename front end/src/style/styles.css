@@ -1,12 +1,4 @@
-
-:root{
-  --primaryColor: #f09d51;
-  --mainWhite: #fff;
-  --mainGray: #ececec;
-  --maiBlack: #222;
-  --mainSpacing: 0.1rem;
-  --mainTransition: all 0.3s linear;
-}
+@import url("./root.css");
 * {
   margin: 0;
   padding: 0;
@@ -134,6 +126,7 @@ body{
     color: var(--primaryColor);
   }
   /* end of jumbotron */
+
 /* categories */
 .categories{
   padding: 4rem 0;
@@ -220,6 +213,7 @@ body{
 }
 
 /* end of categories */ 
+
 /* cart */
 .cart-overlay{
   position: fixed;
@@ -260,7 +254,12 @@ body{
 }
 
 /* end of cart */
-
+.all-product-btn{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+}
 /*Darken Classes */
 
 .darken-bg {

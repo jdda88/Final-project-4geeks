@@ -22,7 +22,11 @@ export const useCart = (initialValue = []) => {
   };
 
   const removeFromCart = (item) => {
-    setCart(cart.filter((i) => i !== item));
+    console.log(cart)
+    dispatch({
+      type: actionTypes.REMOVE_ITEM,
+      id:item.id
+    })
   };
 
   const getTotal = () => {

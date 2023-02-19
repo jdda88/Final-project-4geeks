@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { GoblalButton } from "./generalbutton";
+import { handleSubmit } from "../utils/handdlesubmit";
+import { useEffect } from "react";
 
 export const Register = () => {
 
@@ -129,6 +131,7 @@ export const Register = () => {
           id="zip"
           name="zip"
         />
+
         <label htmlFor="state">State:</label>
         <input
           value={state}
@@ -138,6 +141,7 @@ export const Register = () => {
           id="state"
           name="state"
         />
+
         <label htmlFor="country">Country:</label>
         <input
           value={country}

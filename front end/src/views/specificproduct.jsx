@@ -19,7 +19,7 @@ export const Specificproduct = () => {
           <BarLoader color="#f09d51" />
         </div>
       ) : (
-        <div>
+        <div className="cardproductbody">
           <Card
             name={data?.title}
             price={data?.price}
