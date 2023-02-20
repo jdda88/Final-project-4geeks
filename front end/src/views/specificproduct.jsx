@@ -32,11 +32,13 @@ export const Specificproduct = () => {
           />
           </div>
           <div className="interactivebutton">
-          <GoblalButton name={"More Products"} path={`/products`} />
+            <div className="morebutton">
+          <GoblalButton name={"More Products"} path={`/products`} /></div>
+          <div className="morecategories">
           <GoblalButton
             name={`More ${data?.category}`}
             path={`/products/${data?.category}`}
-          />
+          /></div>
           </div>
         </div>
       )}
