@@ -1,0 +1,38 @@
+.formbody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .formbody label {
+    font-weight: bold;
+  }
+  
+  .formbody input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .formbody input:focus {
+    outline: none;
+    border-color: #f09d51;
+  }
+  
+  .formbody input[type="submit"] {
+    background-color: #f09d51;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .formbody input[type="submit"]:hover {
+    background-color: #d77d3c;
+  }
