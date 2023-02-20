@@ -37,6 +37,7 @@ export const Login = () => {
     console.log(data);
     return data;
   };
+
   return (
     <div>
       <Button
@@ -76,14 +77,14 @@ export const Login = () => {
             />
           </ModalBody>
           <ModalFooter>
-            <GoblalButton name={"Log in"} pad={"10px"} type='submit'/>
-            <GoblalButton
-              name={"Create an account"}
-              path="/register"
-              pad={"10px"}
-            />
+            <GoblalButton name={"Log in"} pad={"10px"} type="submit" />
           </ModalFooter>
         </form>
+        <GoblalButton
+          name={"Create an account"}
+          path="/register"
+          pad={"10px"}
+        />
       </Modal>
     </div>
   );

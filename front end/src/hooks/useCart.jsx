@@ -22,7 +22,7 @@ export const useCart = (initialValue = []) => {
   };
 
   const removeFromCart = (item) => {
-    console.log(cart)
+   // console.log(initialValue)
     dispatch({
       type: actionTypes.REMOVE_ITEM,
       id:item.id
@@ -33,5 +33,5 @@ export const useCart = (initialValue = []) => {
     return cart.reduce((acc, item) => acc + item.price, 0);
   };
 
-  return [cart, addToCart, removeFromCart, getTotal];
+  return [bag, addToCart, removeFromCart, getTotal];
 };

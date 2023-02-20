@@ -4,8 +4,9 @@ import { useCart } from "../hooks/useCart";
 import "../style/shoppingcart.css";
 
 export const ShoppingCart = ({ isOpen }) => {
-  const [cart, removeFromCart] = useCart()
+  
   const [{ bag }, dispatch] = useStateValue();
+  const [cart, removeFromCart] = useCart(bag)
 
   return (
     <div className="shoppingwrapper">
@@ -20,7 +21,7 @@ export const ShoppingCart = ({ isOpen }) => {
                 <div key={index}>
                   <li>
                     {item.name}
-                    <button onClick={() => removeFromCart}>Remove</button>
+                    <button onClick={removeFromCart}>Remove</button>
                   </li>
                 </div>
               );

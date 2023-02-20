@@ -4,9 +4,11 @@ from flask_cors import CORS, cross_origin
 from flask_session import Session
 from config import ApplicationConfig
 from models import db, User
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 app = Flask(__name__)
 app.config.from_object(ApplicationConfig)
+jwt = JWTManager(app)
 cors = CORS(app, supports_credentials=True)
 bcrypt = Bcrypt(app)
 server_session = Session(app)
@@ -93,10 +95,11 @@ def login_user():
         return jsonify({"error": "Access denied. Please verify your username and password and try again"}), 401
 
     session["user_id"] = user.id
-
+    token = create_access_token(identity = user.id)
     return jsonify({
         "id": user.id,
         "email": user.email,
+        "token" : token,
     })
 
 

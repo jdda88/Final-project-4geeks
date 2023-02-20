@@ -16,7 +16,7 @@ const reducer = (state, action) => {
         bag: [...state.bag, action.product],
       };
     case "REMOVE_ITEM":
-        const index = state.bag.findIndex( bagItem => bagItem.id == action.id)
+        const index = state.bag.findIndex( bagItem => bagItem.id === action.id)
         let newBag = [...state.bag]
         if (index >= 0) newBag.splice(index,1)
         else console.log('You cant remove this product')

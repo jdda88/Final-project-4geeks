@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Jumbotron } from "../components/jumbotron";
 import { Card } from "../components/card";
 import { GoblalButton } from "../components/generalbutton";
