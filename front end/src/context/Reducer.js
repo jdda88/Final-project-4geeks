@@ -1,5 +1,5 @@
 export const initialState = {
-  bag: []
+  bag: [] // [{shoes},{shirt},{}]
 };
 
 export const actionTypes = {
@@ -16,12 +16,13 @@ const reducer = (state, action) => {
         bag: [...state.bag, action.product],
       };
     case "REMOVE_ITEM":
-        const index = state.bag.findIndex( bagItem => bagItem.id === action.id)
+      console.log(state.bag, 'state')
+        const index = state.bag.findIndex( (bagItem) => bagItem.id === action.id)
         let newBag = [...state.bag]
-        if (index >= 0) newBag.splice(index,1)
+        if (index >= 0) newBag.splice(index,1) 
         else console.log('You cant remove this product')
         return {
-          state,
+          ...state,
           bag: newBag,
         }
     default: return state;

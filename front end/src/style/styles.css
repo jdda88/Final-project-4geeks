@@ -270,3 +270,8 @@ body{
   filter: brightness(50%);
   
 }
+
+.no-darken {
+  background-color: transparent !important;
+}
+

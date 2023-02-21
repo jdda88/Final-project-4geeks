@@ -7,7 +7,7 @@ export const useCart = (initialValue = []) => {
   const [cart, setCart] = useState(initialValue);
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    //setCart([...cart, item]);
     dispatch({
       type: actionTypes.ADD_TO_BAG,
       product: {
@@ -22,10 +22,10 @@ export const useCart = (initialValue = []) => {
   };
 
   const removeFromCart = (item) => {
-   // console.log(initialValue)
+   // setCart(cart.filter((item) => item.id !== id));
     dispatch({
       type: actionTypes.REMOVE_ITEM,
-      id:item.id
+      id:item.id,
     })
   };
 

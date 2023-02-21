@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoblalButton } from "./generalbutton";
-import { handleSubmit } from "../utils/handdlesubmit";
-import { useEffect } from "react";
+import "../style/register.css";
+
 
 export const Register = () => {
 
@@ -51,16 +51,15 @@ export const Register = () => {
 
     const res = await fetch(`http://localhost:5000/register`, requestOptions);
     const data = await res.json();
-    console.log(data);
     return data;
   }
   //console.log(firstName, lastName,email,pass,address,city,zip,state,country)
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="formcontainer" onSubmit={handleSubmit}>
       <label htmlFor="username">Username:</label>
-        <input
+        <input className="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           type="text"
@@ -69,7 +68,7 @@ export const Register = () => {
           name="Username"
         />
         <label htmlFor="firts-name">First Name:</label>
-        <input
+        <input className="firstname"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           type="text"
@@ -78,7 +77,7 @@ export const Register = () => {
           name="first-name"
         />
         <label htmlFor="last-name">Last Name:</label>
-        <input
+        <input className="lastname"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           type="text"
@@ -87,7 +86,7 @@ export const Register = () => {
           name="last-name"
         />
         <label htmlFor="email">Email:</label>
-        <input
+        <input className="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
@@ -96,7 +95,7 @@ export const Register = () => {
           name="email"
         />
         <label htmlFor="pasword">Pasword:</label>
-        <input
+        <input className="pasword"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
           type="password"
@@ -105,7 +104,7 @@ export const Register = () => {
           name="pasword"
         />
         <label htmlFor="address">Address:</label>
-        <input
+        <input className="address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           type="text"
@@ -114,7 +113,7 @@ export const Register = () => {
           name="address"
         />
         <label htmlFor="city">City:</label>
-        <input
+        <input className="city"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           type="text"
@@ -123,7 +122,7 @@ export const Register = () => {
           name="city"
         />
         <label htmlFor="zip">Zip Code:</label>
-        <input
+        <input className="zipcode"
           value={zip}
           onChange={(e) => setZip(e.target.value)}
           type="text"
@@ -131,9 +130,8 @@ export const Register = () => {
           id="zip"
           name="zip"
         />
-
         <label htmlFor="state">State:</label>
-        <input
+        <input className="state"
           value={state}
           onChange={(e) => setState(e.target.value)}
           type="text"
@@ -141,9 +139,8 @@ export const Register = () => {
           id="state"
           name="state"
         />
-
         <label htmlFor="country">Country:</label>
-        <input
+        <input className="counrtry"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
           type="text"

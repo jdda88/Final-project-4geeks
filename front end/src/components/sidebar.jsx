@@ -18,7 +18,7 @@ export const Sidebar = ({ isOpen }) => {
           <h3>Menu</h3>
         </div>
         <div className="body">
-          <ul>
+          <ul className="menuoptions">
             <li onClick={() => {navigate("/")}}><i className="fa-solid fa-house"></i> Home</li>
             <li><i className="fa-solid fa-tag"></i> Catgories</li>
             <li><i className="fa-solid fa-circle-info"></i> About</li>

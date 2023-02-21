@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { GoblalButton } from "./generalbutton";
 import "../style/styles.css";
+import "../style/login.css"
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [token, setToken] = useState("")
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
@@ -14,7 +16,7 @@ export const Login = () => {
     await login_user();
   };
 
-  const login_user = async () => {
+  const login_user = () => {
     const secretKey = "R0DR1G04G33K5";
 
     const user = {
@@ -32,11 +34,16 @@ export const Login = () => {
       body: JSON.stringify(user),
     };
 
-    const res = await fetch(`http://localhost:5000/login`, requestOptions);
-    const data = await res.json();
-    console.log(data);
-    return data;
+    fetch(`http://localhost:5000/login`, requestOptions)
+    .then( res => res.json())
+    .then(data => {
+      console.log(data)
+      sessionStorage.setItem('token', data.token)
+    })
+    .catch( error => console.log("Fetch Error!", error))
+    setToken(newToken)
   };
+
 
   return (
     <div>
@@ -47,8 +54,8 @@ export const Login = () => {
       >
         Log In
       </Button>
-
-      <Modal isOpen={modal} toggle={toggle}>
+<div >
+      <Modal className="virgin" isOpen={modal} toggle={toggle}>
         <form className="form" onSubmit={handleSubmit}>
           <ModalHeader
             toggle={toggle}
@@ -57,7 +64,7 @@ export const Login = () => {
             Log In
           </ModalHeader>
           <ModalBody style={{ borderBottom: "1px solid #f09d51" }}>
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">Email: </label>
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +73,7 @@ export const Login = () => {
               id="email"
               name="email"
             />
-            <label htmlFor="pasword">pasword</label>
+            <label htmlFor="pasword">Pasword: </label>
             <input
               value={pass}
               onChange={(e) => setPass(e.target.value)}
@@ -86,6 +93,7 @@ export const Login = () => {
           pad={"10px"}
         />
       </Modal>
+      </div>
     </div>
   );
 };
