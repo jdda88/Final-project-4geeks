@@ -32,10 +32,12 @@
     justify-content: space-evenly;
     width: fit-content;
     max-height: 100%;
+    min-width: fit-content;
 
   }
   .morecategories{
     margin: 1px;
+
 
   }
   .morebutton{

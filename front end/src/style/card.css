@@ -1,6 +1,7 @@
 @import url("./root.css");
 
 .categories{
+    /* max-width: 500px; */
     height: 100%;
     width: 100%;
     min-width: fit-content;
@@ -13,7 +14,7 @@
     grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
-    /* justify-items: center; */
+    justify-items: center;
     align-items: baseline;
 }
 
@@ -40,6 +41,7 @@
   } */
   .img-container{
     /* added position relative */
+    max-width: 400px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -49,7 +51,7 @@
   
   .bag-btn{
     /* swithced pos relative to absolute */
-    position: relative;
+    position: absolute;
     top: 70%;
     right: 0;
     background: var(--primaryColor);
