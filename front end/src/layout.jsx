@@ -8,6 +8,7 @@ import { Nav } from "./components/navbar.jsx";
 import "../src/style/styles.css";
 import { Register } from "./components/register.jsx";
 import { Login } from "./components/login.jsx";
+import { Profile } from "./views/profile.jsx";
 
 function Layout() {
   return (
@@ -21,6 +22,7 @@ function Layout() {
           <Route exact path="/products/id/:id" element={<Specificproduct />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/me" element={<Profile />} />
           <Route path="*" element={<h1>Not found!</h1>} />
         </Routes>
       </BrowserRouter>

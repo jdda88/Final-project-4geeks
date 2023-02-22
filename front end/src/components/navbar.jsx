@@ -7,7 +7,6 @@ import { Togglable } from "./togglable";
 import { handleToggle } from "../utils/handletoggle";
 
 export const Nav = () => {
-
   const navigate = useNavigate();
 
   return (
@@ -15,7 +14,7 @@ export const Nav = () => {
       <div className="navbar-center">
         <div className="nav-icon" onClick={handleToggle}>
           <Togglable name={<i className="fas fa-bars"></i>}>
-             <Sidebar />
+            <Sidebar />
           </Togglable>
         </div>
         <div
@@ -30,7 +29,7 @@ export const Nav = () => {
         <div className="cart-btn">
           <div className="nav-icon" onClick={handleToggle}>
             <Togglable name={<i className="fas fa-cart-plus"></i>}>
-               <ShoppingCart />
+              <ShoppingCart />
             </Togglable>
           </div>
         </div>

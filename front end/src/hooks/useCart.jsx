@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { actionTypes } from "../context/Reducer";
 import { useStateValue } from "../context/stateProvider";
 
-export const useCart = (initialValue = []) => {
+export const useCart = () => {
   const [{ bag }, dispatch] = useStateValue();
-  const [cart, setCart] = useState(initialValue);
 
   const addToCart = (item) => {
     //setCart([...cart, item]);
@@ -21,17 +20,11 @@ export const useCart = (initialValue = []) => {
     });
   };
 
-  const removeFromCart = (item) => {
-   // setCart(cart.filter((item) => item.id !== id));
-    dispatch({
-      type: actionTypes.REMOVE_ITEM,
-      id:item.id,
-    })
-  };
+ 
 
   const getTotal = () => {
-    return cart.reduce((acc, item) => acc + item.price, 0);
+    return //cart.reduce((acc, item) => acc + item.price, 0);
   };
 
-  return [bag, addToCart, removeFromCart, getTotal];
+  return [bag, addToCart, getTotal];
 };

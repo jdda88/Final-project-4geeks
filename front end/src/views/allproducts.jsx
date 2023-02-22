@@ -9,7 +9,7 @@ import "../style/spinner.css";
 export const Products = () => {
 
   const { data, loading } = useProducts();
-  const [ cart, addToCart ] = useCart();
+  const [ bag, addToCart ] = useCart();
   const MAX_PRODUCT_NAME_LENGTH = 20;
 
   return (

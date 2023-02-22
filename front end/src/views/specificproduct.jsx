@@ -11,7 +11,7 @@ import "../style/specificproducts.css"
 export const Specificproduct = () => {
   const { id } = useParams();
   const { data, loading } = useProduct(id);
-  const [cart, addToCart, removeFromCart, getTotal] = useCart();
+  const [bag, addToCart] = useCart();
 
   return (
     <div>

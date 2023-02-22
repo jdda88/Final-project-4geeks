@@ -10,7 +10,7 @@ import "../style/spinner.css";
 export const Categories = () => {
   const { category } = useParams();
   const { data, loading } = useCategory(category);
-  const [cart, addToCart, removeFromCart, getTotal] = useCart();
+  const [bag, addToCart] = useCart();
   const MAX_PRODUCT_NAME_LENGTH = 20;
 
   return (
