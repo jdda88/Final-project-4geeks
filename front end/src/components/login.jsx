@@ -6,6 +6,7 @@ import "../style/login.css";
 import { useNavigate } from "react-router";
 import { useStateValue } from "../context/stateProvider";
 import { actionTypes } from "../context/Reducer";
+import { login_user } from "../service/backend";
 
 const tokenFromFetch = sessionStorage.getItem("token");
 
@@ -24,39 +25,20 @@ export const Login = () => {
       });
     };
     addToken();
-  }, tokenFromFetch);
+  }, [tokenFromFetch]);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login_user();
+    await login_user(user);
   };
-
-  const login_user = async () => {
-    const secretKey = "R0DR1G04G33K5";
 
     const user = {
       email,
       password: pass,
     };
 
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        Authorization: `Bearer ${secretKey}`,
-      },
-      body: JSON.stringify(user),
-    };
-    
-    const res = await fetch(`http://localhost:5000/login`, requestOptions);
-    const data = await res.json();
-    sessionStorage.setItem("token", data.token);
-    return data
-    //setToken(newToken)
-  };
 
   console.log(token, "from context");
   return (
@@ -69,9 +51,7 @@ export const Login = () => {
         Log In
       </Button>
       <div>
-        {tokenFromFetch &&
-        tokenFromFetch != "" &&
-        tokenFromFetch != undefined ? (
+        {tokenFromFetch && tokenFromFetch != "" && tokenFromFetch != undefined ? (
           //navigate('/me')
           console.log("working" + tokenFromFetch)
         ) : (

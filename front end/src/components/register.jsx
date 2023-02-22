@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GoblalButton } from "./generalbutton";
+import { register_user } from "../service/backend";
 import "../style/register.css";
 
 
@@ -18,41 +19,22 @@ export const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await register_user();
+    await register_user(new_user);
   };
 
-  const register_user = async () => {
+  const new_user = {
 
-    const secretKey = 'R0DR1G04G33K5'
-
-    const new_user = {
-
-        username,
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        password: pass,
-        address,
-        city,
-        zipcode: zip,
-        state,
-        country
-    }
-
-    const requestOptions = {
-      method: "POST",
-      headers: { 
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Authorization": `Bearer ${secretKey}` 
-      },
-      body: JSON.stringify(new_user)
-    };
-
-    const res = await fetch(`http://localhost:5000/register`, requestOptions);
-    const data = await res.json();
-    return data;
-  }
+    username,
+    first_name: firstName,
+    last_name: lastName,
+    email,
+    password: pass,
+    address,
+    city,
+    zipcode: zip,
+    state,
+    country
+}
   //console.log(firstName, lastName,email,pass,address,city,zip,state,country)
 
   return (
