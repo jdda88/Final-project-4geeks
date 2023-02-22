@@ -1,16 +1,17 @@
 export const initialState = {
   bag: [], // [{shoes},{shirt},{tv}]
-  token: ''
+  isLogged: !!sessionStorage.getItem('token'),
 };
 
 export const actionTypes = {
   ADD_TO_BAG: "ADD_TO_BAG",
   REMOVE_ITEM: "REMOVE_ITEM",
   ADD_TOKEN: "ADD_TOKEN",
+  LOG_OUT: "LOG_OUT",
 };
 
 const reducer = (state, action) => {
-  //console.log(action);
+  console.log(action.type);
   switch (action.type) {
     case "ADD_TO_BAG":
       return {
@@ -30,9 +31,16 @@ const reducer = (state, action) => {
         }
 
     case "ADD_TOKEN":
+      console.log('add token')
       return {
         ...state,
-        token: action.token
+        isLogged: true
+      }
+    case "LOG_OUT":
+      console.log('log out')
+      return {
+        ...state,
+        isLogged: false
       }
     default: return state;
   }

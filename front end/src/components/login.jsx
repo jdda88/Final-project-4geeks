@@ -8,30 +8,28 @@ import { useStateValue } from "../context/stateProvider";
 import { actionTypes } from "../context/Reducer";
 import { login_user } from "../service/backend";
 
-const tokenFromFetch = sessionStorage.getItem("token");
-
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [modal, setModal] = useState(false);
-  const [token, dispatch] = useStateValue();
+
+  const [ {isLogged} , dispatch] = useStateValue();
+
   const toggle = () => setModal(!modal);
 
-  useEffect(() => {
-    const addToken = () => {
-      dispatch({
-        type: actionTypes.ADD_TOKEN,
-        token: tokenFromFetch,
-      });
-    };
-    addToken();
-  }, [tokenFromFetch]);
+  // useEffect(() => {
+      
+  // }, []);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login_user(user);
+    dispatch({
+      type: actionTypes.ADD_TOKEN,
+      isLogged: true,
+    });
   };
 
     const user = {
@@ -40,7 +38,7 @@ export const Login = () => {
     };
 
 
-  console.log(token, "from context");
+ 
   return (
     <div>
       <Button
@@ -51,10 +49,6 @@ export const Login = () => {
         Log In
       </Button>
       <div>
-        {tokenFromFetch && tokenFromFetch != "" && tokenFromFetch != undefined ? (
-          //navigate('/me')
-          console.log("working" + tokenFromFetch)
-        ) : (
           <Modal className="virgin" isOpen={modal} toggle={toggle}>
             <form className="form" onSubmit={handleSubmit}>
               <ModalHeader
@@ -93,7 +87,7 @@ export const Login = () => {
               pad={"10px"}
             />
           </Modal>
-        )}
+        
       </div>
     </div>
   );
