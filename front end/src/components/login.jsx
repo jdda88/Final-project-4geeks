@@ -11,9 +11,9 @@ export const Login = () => {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
-    await login_user();
+     login_user();
   };
 
   const login_user = () => {

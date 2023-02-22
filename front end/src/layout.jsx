@@ -9,6 +9,7 @@ import "../src/style/styles.css";
 import { Register } from "./components/register.jsx";
 import { Login } from "./components/login.jsx";
 
+
 function Layout() {
   return (
     <div className="app">
