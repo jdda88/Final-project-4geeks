@@ -19,6 +19,8 @@ with app.app_context():
 
 
 @app.route("/@me")
+@cross_origin(supports_credentials=True)
+@jwt_required()
 def get_current_user():
     user_id = session.get("user_id")
 

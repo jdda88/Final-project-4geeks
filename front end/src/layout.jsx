@@ -9,6 +9,7 @@ import "../src/style/styles.css";
 import { Register } from "./components/register.jsx";
 import { Login } from "./components/login.jsx";
 import { Profile } from "./views/profile.jsx";
+import { Checkout } from "./views/checkout.jsx";
 
 
 function Layout() {
@@ -24,6 +25,7 @@ function Layout() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/me" element={<Profile />} />
+          <Route exact path="/checkout" element={<Checkout />} />
           <Route path="*" element={<h1>Not found!</h1>} />
         </Routes>
       </BrowserRouter>

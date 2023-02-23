@@ -6,7 +6,7 @@ import "../style/login.css";
 import { useNavigate } from "react-router";
 import { useStateValue } from "../context/stateProvider";
 import { actionTypes } from "../context/Reducer";
-import { login_user } from "../service/backend";
+import { login_user } from "../service/api";
 
 export const Login = () => {
   const [email, setEmail] = useState("");

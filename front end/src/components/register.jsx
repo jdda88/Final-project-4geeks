@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GoblalButton } from "./generalbutton";
-import { register_user } from "../service/backend";
+import { register_user } from "../service/api";
 import "../style/register.css";
 
 

@@ -48,12 +48,12 @@ export const Sidebar = ({ isOpen }) => {
                   <i className="fa-solid fa-house"></i> Home
                 </li>
                 <li onClick={() => navigate('/me')}>
-                  <i class="fa-solid fa-user"></i> Profile
+                  <i className="fa-solid fa-user"></i> Profile
                 </li>
                 <li>
-                <i class="fa-solid fa-bag-shopping"></i> Catgories
+                <i className="fa-solid fa-bag-shopping"></i> Catgories
                 </li>
-                <li>
+                <li onClick={() => navigate('/checkout')}>
                   <i className="fa-solid fa-tag"></i> Checkout
                 </li>
                 <li>

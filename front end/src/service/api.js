@@ -1,6 +1,7 @@
+const BaseURL = 'http://localhost:5000'
 const token = sessionStorage.getItem('token')
 
-export const login_user = async (user) => {
+export const login_user = async (user, navigate) => {
 
     const requestOptions = {
         method: "POST",
@@ -11,7 +12,7 @@ export const login_user = async (user) => {
         body: JSON.stringify(user),
     };
     try {
-        const res = await fetch(`http://localhost:5000/login`, requestOptions);
+        const res = await fetch(`${BaseURL}/login`, requestOptions);
         const data = await res.json();
         sessionStorage.setItem("token", data.token);
 
@@ -32,8 +33,32 @@ export const register_user = async (new_user) => {
         },
         body: JSON.stringify(new_user)
     };
-
-    const res = await fetch(`http://localhost:5000/register`, requestOptions);
+    try {
+    const res = await fetch(`${BaseURL}/register`, requestOptions);
     const data = await res.json();
     return data;
+    }
+    catch (error) {
+        console.log('Fetch register error')
+    }
+}
+
+export const get_user = async () => {
+
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            Authorization: `Bearer ${token}`
+        },
+    };
+    try {
+    const res = await fetch(`${BaseURL}/me`, requestOptions);
+    const data = await res.json();
+    return data;
+    }
+    catch (error) {
+        console.log('Fetch get_user error')
+    }
 }
