@@ -26,8 +26,9 @@
 }
 
 .menu {
-  height: 100%;
-  padding: 10px;
+
+  height: 450px;
+  padding: 14px;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -54,6 +55,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: auto;
 }
 
 .signinbuttons {
@@ -77,4 +79,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.fa-solid{
+  margin: 10px;
 }

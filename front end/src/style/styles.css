@@ -105,6 +105,7 @@ body{
     flex: auto;
     justify-content: center;
     flex-direction: row-reverse;
+    text-align: center;
 
   }
   .product-price{
@@ -119,6 +120,7 @@ body{
     flex: auto;
     justify-content: center;
     flex-direction: row-reverse;
+    text-align: justify;
 
   }
   .banner-btn:hover{
@@ -158,7 +160,6 @@ body{
   justify-content: center;
   width: 100%;
   height: 100%;
-  border: 1px solid red
 }
 
 .bag-btn{
@@ -190,7 +191,6 @@ body{
   height: 100px;
   min-height: 100px;
   transition: var(--mainTransition);
-  border: 1px solid blue;
 }
 .img-container:hover .product-img{
   opacity: 0.5;

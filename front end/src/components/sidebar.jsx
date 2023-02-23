@@ -13,7 +13,7 @@ export const Sidebar = ({ isOpen }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    console.log("culo");
+    console.log("read this");
     dispatch({
       type: actionTypes.LOG_OUT,
       isLogged: false,

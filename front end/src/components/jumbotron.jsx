@@ -7,7 +7,7 @@ export const Jumbotron = () => {
     <div>
       <div className="jumbotron">
         <div className="banner">
-          <h1 className="banner-title">type of product</h1>
+          <h1 className="banner-title">View all products</h1>
           <GoblalButton name={"Show All"} path={"/products"} />
         </div>
       </div>

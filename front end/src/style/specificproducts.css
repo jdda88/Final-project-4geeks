@@ -1,16 +1,20 @@
 .singleproduct {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .singleproductcard {
-    margin-bottom: 20px;
-  }
-  
-  @media (min-width: 768px) {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 10px;
+  width: 65%;
+  flex-direction: row;
+  margin: auto;
+  max-width: 750px;
+}
+
+.singleproductcard {
+  margin-right: 20px;
+  /* max-height: 220px;
+  max-width: 220px; */
+}
+
+/* @media (min-width: 768px) {
     .singleproduct {
       flex-direction: row;
       align-items: flex-start;
@@ -24,22 +28,17 @@
     .singleproductcard:last-child {
       margin-right: 0;
     }
-  }
-  .interactivebutton{
+  } */
+  .interactivebutton {
     display: flex;
-    flex-direction: row;
-    margin: auto;
+    flex-direction:column-reverse;
+
     justify-content: space-evenly;
-    width: fit-content;
     max-height: 100%;
-    min-width: fit-content;
-
   }
-  .morecategories{
-    margin: 1px;
-
-
-  }
-  .morebutton{
-    margin: 1px;
+  
+  .morecategories,
+  .morebutton {
+    margin: 3px;
+    width: 50%; /* set a fixed width */
   }

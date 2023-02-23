@@ -3,9 +3,6 @@ import { useStateValue } from "../context/stateProvider";
 import { actionTypes } from "../context/Reducer";
 import "../style/shoppingcart.css";
 import { GoblalButton } from "./generalbutton";
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
 
 export const ShoppingCart = ({ isOpen }) => {
   const [{ bag }, dispatch] = useStateValue(); //[{},{},{}]
