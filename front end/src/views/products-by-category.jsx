@@ -11,6 +11,7 @@ export const Categories = () => {
   const { category } = useParams();
   const { data, loading } = useCategory(category);
   const [bag, addToCart] = useCart();
+  
   const MAX_PRODUCT_NAME_LENGTH = 20;
 
   return (

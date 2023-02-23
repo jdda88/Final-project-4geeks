@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue } from "../context/stateProvider";
-export const Profile = () => {
+
+export const Checkout = () => {
   const [{ isLogged }] = useStateValue();
 
   return (
@@ -8,11 +9,7 @@ export const Profile = () => {
       {isLogged ? (
         <div>
           <div>
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
-            <p>{user.address}</p>
-            <p>{user.phone}</p>
-            <p>{user.bio}</p>
+            Checkout
           </div>
         </div>
       ) : (

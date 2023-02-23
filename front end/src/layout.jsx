@@ -10,6 +10,7 @@ import { Register } from "./components/register.jsx";
 import { Login } from "./components/login.jsx";
 import { Profile } from "./views/profile.jsx";
 
+
 function Layout() {
   return (
     <div className="app">
