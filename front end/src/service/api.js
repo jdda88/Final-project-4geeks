@@ -1,4 +1,5 @@
 import toast, { Toaster } from 'react-hot-toast';
+
 const BaseURL = 'http://localhost:5000'
 const token = sessionStorage.getItem('token')
 
@@ -38,7 +39,7 @@ export const register_user = async (new_user) => {
     try {
     const res = await fetch(`${BaseURL}/register`, requestOptions);
     const data = await res.json();
-    toast.success('Successfully toasted!')
+    toast.success('Successfully!')
     return data;
     }
     catch (error) {

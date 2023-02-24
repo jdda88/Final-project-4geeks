@@ -113,6 +113,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 6px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	  transition: all 400ms ease-out;
+	  cursor: default;
   }
   .cardproductbody{
     width: 100%;
@@ -131,4 +135,18 @@
     padding: 40px;
     margin: inherit;
     margin-bottom: 50px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	  transition: all 400ms ease-out;
+	  cursor: default;
+  }
+
+  .card-product-home:hover {
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+  }
+
+  .card-product:hover {
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
   }
