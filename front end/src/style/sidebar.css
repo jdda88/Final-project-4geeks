@@ -1,0 +1,86 @@
+@import url("./root.css");
+
+.sidebarWrapper {
+  filter: none !important;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #f8f8f8 !important;
+  z-index: 30; /* changed from 20 to 30 */
+  transition: transform 0.3s ease-in-out;
+  filter: none !important;
+  float: center;
+  clear: right;
+}
+
+.menu {
+
+  height: 450px;
+  padding: 14px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.menu ul {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  
+}
+
+.menu li:hover{
+  background-color: rgb(230, 229, 229);
+}
+
+.body {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.signinbuttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  border-top: 1px solid #f09d51;
+  padding-top: 10px;
+}
+
+.Head {
+  border-bottom: 1px solid #f09d51;
+}
+
+.Head h3 {
+  margin-bottom: 5px;
+}
+
+.menuoptions{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fa-solid{
+  margin: 10px;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.close {
+  transform: translateX(-250px);
+}

@@ -1,0 +1,12 @@
+@import url("./root.css");
+
+.spinner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+
+}

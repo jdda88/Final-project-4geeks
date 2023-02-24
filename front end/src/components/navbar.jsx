@@ -1,19 +1,39 @@
 import React from "react";
-import "../style/styles.css"
+import { useNavigate } from "react-router";
+import "../style/styles.css";
+import { ShoppingCart } from "./shoppingcart";
+import { Sidebar } from "./sidebar";
+import { Togglable } from "./togglable";
+import { handleToggle } from "../utils/handletoggle";
+
 
 export const Nav = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar">
       <div className="navbar-center">
-        <span className="nav-icon">
-          <i className="fas fa-bars"></i>
-        </span>
-        <h1 className="logo">E-commerce site</h1>
+        <div className="nav-icon" onClick={handleToggle}>
+          <Togglable name={<i className="fas fa-bars"></i>}>
+            <Sidebar />
+          </Togglable>
+        </div>
+        <div
+          type="button"
+          className="Backtohome"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <img className="logo" src="../images/bsblogo.png" alt="logo" />
+          {/* <h1 className="logo">B S B</h1> */}
+        </div>
         <div className="cart-btn">
-          <span className="nav-icon">
-            <i className="fas fa-cart-plus"></i>
-          </span>
-          <div className="cart-items">0</div>
+          <div className="nav-icon" onClick={handleToggle}>
+            <Togglable name={<i className="fas fa-cart-plus"></i>}>
+              <ShoppingCart />
+            </Togglable>
+          </div>
         </div>
       </div>
     </nav>
