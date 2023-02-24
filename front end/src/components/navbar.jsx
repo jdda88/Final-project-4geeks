@@ -6,6 +6,7 @@ import { Sidebar } from "./sidebar";
 import { Togglable } from "./togglable";
 import { handleToggle } from "../utils/handletoggle";
 
+
 export const Nav = () => {
   const navigate = useNavigate();
 
@@ -24,7 +25,8 @@ export const Nav = () => {
             navigate("/");
           }}
         >
-          <h1 className="logo">BSB</h1>
+          <img className="logo" src="../images/bsblogo.png" alt="logo" />
+          {/* <h1 className="logo">B S B</h1> */}
         </div>
         <div className="cart-btn">
           <div className="nav-icon" onClick={handleToggle}>

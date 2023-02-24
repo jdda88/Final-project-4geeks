@@ -43,7 +43,7 @@ anime.timeline({loop: true})
 
       <div className="categories">
         <div className="section-title">
-          <h2>our products</h2>
+          <h2>our Categories</h2>
         </div>
       </div>
     </div>

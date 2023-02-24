@@ -13,7 +13,7 @@ body{
 .navbar{
     position: sticky;
     top: 0;
-    height: 60px;
+    height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -275,3 +275,22 @@ body{
   background-color: transparent !important;
 }
 
+.Backtohome{
+  width: 400px;
+  height: 60px;
+  object-fit: cover;
+  padding: none;
+  margin: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.logo{
+  max-width: 75%;
+  max-height: 170px;
+  padding: none;
+  margin: none;
+  object-fit: cover;
+
+}
