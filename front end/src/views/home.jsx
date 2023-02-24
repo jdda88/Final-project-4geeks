@@ -24,8 +24,8 @@ export const Home = () => {
             //console.log(name);
             return (
               <div className="card-product-home" key={index}>
-                <Card name={name} index={index} />
-                <GoblalButton name={name} path={`/products/${name}`} />
+                <Card index={index} />
+                <GoblalButton className="banner-btn" name={name} path={`/products/${name}`} />
               </div>
             );
           })}
