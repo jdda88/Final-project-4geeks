@@ -24,7 +24,7 @@ export const Nav = () => {
             navigate("/");
           }}
         >
-          <h1 className="logo">BSB</h1>
+          <h1 className="logo">B S B</h1>
         </div>
         <div className="cart-btn">
           <div className="nav-icon" onClick={handleToggle}>
