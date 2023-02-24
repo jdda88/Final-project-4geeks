@@ -17,14 +17,6 @@
   clear: right;
 }
 
-.sidebar.true {
-  transform: translateX(0);
-}
-
-.sidebar.false {
-  transform: translateX(-250px);
-}
-
 .menu {
 
   height: 450px;
@@ -83,4 +75,12 @@
 
 .fa-solid{
   margin: 10px;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.close {
+  transform: translateX(-250px);
 }
