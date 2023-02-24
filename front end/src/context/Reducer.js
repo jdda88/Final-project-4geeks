@@ -31,7 +31,7 @@ const reducer = (state, action) => {
         }
 
     case "ADD_TOKEN":
-      console.log('add token')
+      
       return {
         ...state,
         isLogged: true

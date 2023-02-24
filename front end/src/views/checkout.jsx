@@ -11,14 +11,15 @@ export const Checkout = () => {
             <ul>
           {bag?.map((item, index) => {
             console.log(item,'from checkout')
-
             return (
                 <div className="checkout-item" key={item.id}>
                     <li>
                         <div className="checkout-img">
                             <img scr={item.image} alt={item.name} />
-                            <p>{item.name}</p>
-
+                        </div>
+                        <div className="cheackout-info">
+                        <p>{item.name}</p>
+                        <p>{item.price}</p>
                         </div>
                     </li>
                 </div>

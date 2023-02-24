@@ -1,3 +1,4 @@
+import toast, { Toaster } from 'react-hot-toast';
 const BaseURL = 'http://localhost:5000'
 const token = sessionStorage.getItem('token')
 
@@ -33,13 +34,17 @@ export const register_user = async (new_user) => {
         },
         body: JSON.stringify(new_user)
     };
+
     try {
     const res = await fetch(`${BaseURL}/register`, requestOptions);
     const data = await res.json();
+    toast.success('Successfully toasted!')
     return data;
     }
     catch (error) {
         console.log('Fetch register error')
+        toast.error("This didn't work.")
+        return error
     }
 }
 

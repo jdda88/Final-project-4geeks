@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { GoblalButton } from "./generalbutton";
 import { register_user } from "../service/api";
+import toast, { Toaster } from 'react-hot-toast';
 import "../style/register.css";
-
 
 export const Register = () => {
 
@@ -19,7 +19,7 @@ export const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await register_user(new_user);
+    await register_user(new_user)
   };
 
   const new_user = {
@@ -131,6 +131,7 @@ export const Register = () => {
           name="country"
         />
         <GoblalButton type="submit" name={"Register"} />
+        <Toaster />
       </form>
     </>
   );
